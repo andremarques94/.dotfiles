@@ -1,18 +1,24 @@
+## Homebrew apps available
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 ##Init starship
 eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.dotfiles/.starship/starship.toml
 
 ## Loads nvm
-
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-## Homebrew 
+## Homebrew python
 export PATH=/opt/homebrew/opt/python@3.9/libexec/bin:$PATH
+
+## z jump
+source /Users/nozk/.config/zsh-z/zsh-z.plugin.zsh
 
 ## Case insensitive completion
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
+export ZSHZ_CASE=smart
 
 ## Alias
 alias vim="nvim"
@@ -21,6 +27,7 @@ alias suggest="gh copilot suggest"
 alias explain="gh copilot explain"
 alias ls="ls --color"
 alias l="ls -la"
+alias celar="clear"
 
 ## No duplicate history
 HISTSIZE=5000
@@ -49,3 +56,6 @@ zstyle ':completion:*' list-colors ''
 
 ## fuzzy finder
 eval "$(fzf --zsh)"
+
+## Make everything english
+export LANG=en_US.UTF-8
