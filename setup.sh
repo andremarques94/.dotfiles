@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DOTFILES_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
 command_exists(){
 	command -v "$1" &> /dev/null
 }
@@ -11,9 +13,7 @@ else
 	echo "Brew is already installed"
 fi
 
-# Install brew packages
-BREWFILE=~/.dotfiles/Brewfile
-
+BREWFILE="$DOTFILES_DIR/Brewfile"
 if [ -f "$BREWFILE" ]; then
 	if !brew bundle check --file="$BREWFILE" &> /dev/null; then
 		echo "Running brewfile..."
@@ -25,11 +25,10 @@ else
 	echo "Brewfile not found at $BREWFILE."
 fi
 
-# Set up symlinks
 src_paths=(
-    "$HOME/.dotfiles/zed/settings.json"
-    "$HOME/.dotfiles/.zshrc"
-    "$HOME/.dotfiles/.gitconfig"
+    "$DOTFILES_DIR/zed/settings.json"
+    "$DOTFILES_DIR/.zshrc"
+    "$DOTFILES_DIR/.gitconfig"
 )
 
 dest_paths=(
@@ -49,7 +48,7 @@ for i in "${!src_paths[@]}"; do
     fi
 done
 
-ITERM_SETTINGS_DIR=~/.dotfiles/iterm2
+ITERM_SETTINGS_DIR="$DOTFILES_DIR/iterm2"
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$ITERM_SETTINGS_DIR"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
