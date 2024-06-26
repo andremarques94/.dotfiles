@@ -13,7 +13,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export PATH=/opt/homebrew/opt/python@3.9/libexec/bin:$PATH
 
 ## z jump
-source /Users/nozk/.config/zsh-z/zsh-z.plugin.zsh
+source $HOME/zsh-z/zsh-z.plugin.zsh
 
 ## Case insensitive completion
 autoload -U compinit && compinit
@@ -43,7 +43,7 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 ## syntax highlighting to zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## auto-suggestions to zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -57,5 +57,4 @@ zstyle ':completion:*' list-colors ''
 ## fuzzy finder
 eval "$(fzf --zsh)"
 
-## Make everything english
 export LANG=en_US.UTF-8

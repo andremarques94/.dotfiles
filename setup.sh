@@ -29,12 +29,14 @@ src_paths=(
     "$DOTFILES_DIR/zed/settings.json"
     "$DOTFILES_DIR/.zshrc"
     "$DOTFILES_DIR/.gitconfig"
+	"$DOTFILES_DIR/zsh-z"
 )
 
 dest_paths=(
     "$HOME/.config/zed/settings.json"
     "$HOME/.zshrc"
     "$HOME/.gitconfig"
+	"$HOME/zsh-z"
 )
 
 for i in "${!src_paths[@]}"; do
