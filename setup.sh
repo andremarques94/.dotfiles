@@ -49,4 +49,8 @@ for i in "${!src_paths[@]}"; do
     fi
 done
 
+ITERM_SETTINGS_DIR=~/.dotfiles/iterm2
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$ITERM_SETTINGS_DIR"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
 echo "All tasks completed."
