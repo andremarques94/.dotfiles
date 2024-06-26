@@ -1,15 +1,23 @@
 # .dotfiles
-config files 
 
+My personal dotfiles for macOS
 
-- Homebrew
-- zsh
-- spaceship
-- zsh autosuggestions && syntax highlight
-- iterm2 minimal colors
+## Setup
 
-Install
+- Clone the repo
+- Run the setup script
 
-- Clone the repo to the home directory
-- run the setup script
+```bash
+git clone
+cd .dotfiles
+./setup.sh
+```
 
+## What's included?
+
+- [Brewfile](https://brew.sh/)
+- [Starship.toml](https://starship.rs/)
+- Zshrc
+- Iterm2 profile
+- [Zed settings](https://zed.dev/)
+- Setup script
