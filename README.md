@@ -2,19 +2,14 @@
 config files 
 
 
+- Homebrew
 - zsh
 - spaceship
 - zsh autosuggestions && syntax highlight
 - iterm2 minimal colors
 
-## Install Homebrew
-```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"```
+Install
 
-## Run the Brewfile
-```brew bundle --file ~/.dotfiles/Brewfile```
-
-## Add the symlinks
-```ln -s ~/.dotfiles/zed/settings.json ~/.config/zed/settings.json```  
-```ln -s ~/.dotfiles/.zshrc ~/.zshrc```  
-```ln -s ~/.dotfiles/.gitconfig ~/.gitconfig```  
+- Clone the repo to the home directory
+- run the setup script
 
