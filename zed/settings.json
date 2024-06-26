@@ -29,17 +29,5 @@
         "source.fixAll.eslint": true
       }
     }
-  },
-  "assistant": {
-    "version": "1",
-    "provider": {
-      "default_model": {
-        "name": "llama3:latest",
-        "max_tokens": 2048,
-        "keep_alive": "10m"
-      },
-      "name": "ollama",
-      "low_speed_timeout_in_seconds": null
-    }
   }
 }
