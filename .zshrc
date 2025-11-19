@@ -6,14 +6,15 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.dotfiles/.starship/starship.toml
 
 ## Loads nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
 
 ## Homebrew python
 export PATH=/opt/homebrew/opt/python@3.9/libexec/bin:$PATH
 
-## z jump
-source $HOME/zsh-z/zsh-z.plugin.zsh
+## Go PATH
+export PATH=$PATH:$HOME/go/bin
 
 ## Case insensitive completion
 autoload -U compinit && compinit
@@ -22,12 +23,10 @@ export ZSHZ_CASE=smart
 
 ## Alias
 alias vim="nvim"
-alias intellij="open -na 'IntelliJ IDEA.app'"
-alias suggest="gh copilot suggest"
-alias explain="gh copilot explain"
 alias ls="ls --color"
 alias l="ls -la"
 alias celar="clear"
+alias connect-dev-env="ssh -i ~/.ssh/digitalocean root@178.128.174.2"
 
 ## No duplicate history
 HISTSIZE=5000
@@ -57,4 +56,10 @@ zstyle ':completion:*' list-colors ''
 ## fuzzy finder
 eval "$(fzf --zsh)"
 
+
+DISABLE_LAST_LOGIN=true
 export LANG=en_US.UTF-8
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
