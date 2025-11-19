@@ -1,0 +1,15 @@
+font-family="FiraMono Nerd Font Mono"
+font-thicken=true
+font-size=14
+theme="Dracula"
+shell-integration-features=no-cursor
+cursor-style=block
+cursor-color=#ee99a0
+title="NOZK@Tempest"
+window-height=25
+window-width=85
+window-padding-balance=true
+quit-after-last-window-closed=true
+quick-terminal-position=top
+macos-titlebar-proxy-icon=hidden
+keybind = global:cmd+plus=toggle_quick_terminal
